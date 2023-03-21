@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Empty Server RPC Function w NOR</Title>
+      <Author>Nathaniel "UnscriptedLogic" Alcala</Author>
+      <Description>A snippet that just creates an Server RPC function with an NetworkObjectReference</Description>
+      <Shortcut>srpcref</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+          [ServerRpc]
+          private void $Name$ServerRpc(NetworkObjectReference $referenceName$) 
+          {
+              $referenceName$.TryGet(out NetworkObject $networkObjectName$);
+          }          
+        ]]>
+      </Code>
+      <Imports>
+        <Import>
+          <Namespace>Unity.Netcode</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Name</ID>
+          <ToolTip>Set the function name of the server rpc</ToolTip>
+          <Default>Function</Default>
+        </Literal>        
+        <Literal>
+          <ID>referenceName</ID>
+          <ToolTip>Set the variable name of the reference object</ToolTip>
+          <Default>networkObjectReference</Default>
+        </Literal>        
+        <Literal>
+          <ID>networkObjectName</ID>
+          <ToolTip>Set the variable name of the retrieved network object</ToolTip>
+          <Default>networkObject</Default>
+        </Literal>
+      </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

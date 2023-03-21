@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Empty Server-Client RPC Function Pair</Title>
+      <Author>Nathaniel "UnscriptedLogic" Alcala</Author>
+      <Description>A snippet that just creates a Server and Client RPC pair</Description>
+      <Shortcut>scrpc</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+          [ServerRpc $ownership$]
+          private void $Name$ServerRpc() {
+              $Name$ClientRpc();
+          }
+          
+          [ClientRpc]
+          private void $Name$ClientRpc() {
+          
+          }
+          
+        ]]>
+      </Code>
+      <Imports>
+        <Import>
+          <Namespace>Unity.Netcode</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Name</ID>
+          <ToolTip>Set the function name of the rpc pair</ToolTip>
+          <Default>Function</Default>
+        </Literal>
+        <Literal>
+          <ID>ownership</ID>
+          <ToolTip>Set the ownership permissions of the server rpc</ToolTip>
+          <Default>(RequireOwnership = false)</Default>
+        </Literal>
+      </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

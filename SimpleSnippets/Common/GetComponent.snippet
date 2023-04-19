@@ -2,27 +2,25 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Singleton</Title>
+      <Title>Get Component</Title>
       <Author>Nathaniel "UnscriptedLogic" Alcala</Author>
-      <Description>A snippet that auto completes a singleton</Description>
-      <Shortcut>singleton</Shortcut>
+      <Description>A snippet that auto completes a get component call</Description>
+      <Shortcut>getcomp</Shortcut>
     </Header>
     <Snippet>
       <Code Language="CSharp">
-        <![CDATA[
-        public static $type$ instance { get; private set; }
-        
-        private void Awake()
-        {
-            instance = this;
-        }
-        ]]>
+        <![CDATA[$component$.GetComponent<$name$>()$end$]]>
       </Code>
       <Declarations>
         <Literal>
-          <ID>type</ID>
-          <ToolTip>The type of the singleton</ToolTip>
+          <ID>name</ID>
+          <ToolTip>The name of the type</ToolTip>
           <Default>Type</Default>
+        </Literal>
+        <Literal>
+          <ID>component</ID>
+          <ToolTip>The name of the component</ToolTip>
+          <Default>component</Default>
         </Literal>
       </Declarations>
     </Snippet>

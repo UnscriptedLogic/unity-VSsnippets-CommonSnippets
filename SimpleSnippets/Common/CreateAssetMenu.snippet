@@ -2,27 +2,22 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Singleton</Title>
+      <Title>Create Asset Menu</Title>
       <Author>Nathaniel "UnscriptedLogic" Alcala</Author>
-      <Description>A snippet that auto completes a singleton</Description>
-      <Shortcut>singleton</Shortcut>
+      <Description>A snippet that auto completes a CreateAssetMenu tag</Description>
+      <Shortcut>createassetmenu</Shortcut>
     </Header>
     <Snippet>
       <Code Language="CSharp">
         <![CDATA[
-        public static $type$ instance { get; private set; }
-        
-        private void Awake()
-        {
-            instance = this;
-        }
-        ]]>
+        //$filename$ $end$
+        [CreateAssetMenu(fileName = "New $filename$", menuName = "ScriptableObjects/$filename$")]]]>
       </Code>
       <Declarations>
         <Literal>
-          <ID>type</ID>
-          <ToolTip>The type of the singleton</ToolTip>
-          <Default>Type</Default>
+          <ID>filename</ID>
+          <ToolTip>The name of the file</ToolTip>
+          <Default>FileName</Default>
         </Literal>
       </Declarations>
     </Snippet>
